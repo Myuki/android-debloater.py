@@ -50,7 +50,7 @@ com.google.android.syncadapters.contacts
 ## Example
 
 ```
-python.exe .\android-debloater.py -u 0 disable-clear com.google.android.gm com.google.android.syncadapters.calendar com.google.android.syncadapters.contacts
+./android-debloater.py -u 0 disable-clear com.google.android.gm com.google.android.syncadapters.calendar com.google.android.syncadapters.contacts
 
-python.exe .\android-debloater.py -u 0 -i package.list disable-clear 
+./android-debloater.py -u 0 -i package.list disable-clear 
 ```
