@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import getopt
-import re
 import subprocess
 import sys
 from typing import Set
@@ -19,11 +18,9 @@ if __name__ == "__main__":
   userList: set = set()
   command = "adb shell pm list users"
   output = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE).stdout.read().decode()
-  for line in output[1:]:
-    regex = r"UserInfo{\{(.*?)\:"
-    tempUser: str = re.findall(regex, line)
-    if tempUser != "":
-      userList.add(user)
+  for line in output.splitlines()[1:]:
+    if "UserInfo{" in line:
+      userList.add(line[line.index("{") + 1:line.index(":")])
 
   # Parse arguments
   options, arguments = getopt.getopt(sys.argv[1:], "u:a:i:", longopts=["user", "adb", "input"])
