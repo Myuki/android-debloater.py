@@ -15,7 +15,7 @@ if __name__ == "__main__":
   packageListFilePath: str = ""
 
   # Get user list
-  userList: set = set()
+  userList: Set[str] = set()
   command = "adb shell pm list users"
   output = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE).stdout.read().decode()
   for line in output.splitlines()[1:]:
