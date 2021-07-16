@@ -58,13 +58,14 @@ if __name__ == "__main__":
 
   # Run command
   for package in packageList:
-    print(pmOption + " " + package + ":")
+    print(pmOption.capitalize() + " " + package + ":")
     if pmOption == "disable-clear":
       command = adbPath + " shell pm disable-user --user " + user + " " + package
       output = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE).stdout.read().decode()
+      print(output.strip())
       command = adbPath + " shell pm clear --user " + user + " " + package
-      subprocess.Popen(command, shell=True, stdout=subprocess.PIPE).stdout.read().decode()
-      print(output)
+      output = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE).stdout.read().decode()
+      print("Clear: " + output)
     else:
       command = adbPath + " shell pm " + pmOption + " --user " + user + " " + package
       output = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE).stdout.read().decode()
