@@ -7,7 +7,7 @@
 ## Command
 
 ```
-android-debloater.py [arguments...] [package...]
+android-debloater.py [arguments...] <Option> [packages...]
 ```
 
 ## Arguments
