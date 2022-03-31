@@ -7,10 +7,10 @@
 ## Command
 
 ```
-android-debloater.py [arguments...] <Option> [packages...]
+android-debloater.py [parameters...] <Option> [packages...]
 ```
 
-## Arguments
+## Parameters
 
 ```
 -u --user
@@ -47,10 +47,16 @@ com.google.android.syncadapters.calendar
 com.google.android.syncadapters.contacts
 ```
 
+## List Files
+
+`list/` has some app list for some device.
+
+Warning! It is a specific purpose list include some maybe necessary app like Google Search and Gmail. You should check the app list before use it.
+
 ## Example
 
 ```
 ./android-debloater.py -u 0 disable-clear com.google.android.gm com.google.android.syncadapters.calendar com.google.android.syncadapters.contacts
 
-./android-debloater.py -u 0 -i package.list disable-clear 
+./android-debloater.py -u 0 -i ./list/lemonade.txt disable-clear 
 ```
