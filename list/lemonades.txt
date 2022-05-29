@@ -19,6 +19,7 @@ com.netflix.mediaclient
 com.netflix.partner.activation
 com.oneplus.account
 com.oneplus.chargingpilar
+com.oneplus.gamespace
 com.oneplus.membership
 com.oneplus.opscout
 com.oneplus.opshelf
